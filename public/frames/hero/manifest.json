@@ -1,0 +1,6 @@
+{
+  "count": 150,
+  "pattern": "frames/hero/frame_%03d.webp",
+  "width": 1280,
+  "height": 720
+}
