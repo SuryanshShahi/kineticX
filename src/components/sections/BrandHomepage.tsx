@@ -52,32 +52,32 @@ export default function BrandHomepage() {
   return (
     <div ref={rootRef} className="relative w-full bg-neutral-950 text-white">
       {/* 1. MANIFESTO */}
-      <section className="py-20 sm:py-28 px-6 max-w-5xl mx-auto text-center brand-reveal">
+      <section className="py-14 sm:py-28 px-4 sm:px-6 max-w-5xl mx-auto text-center brand-reveal">
         <span className="text-lime-400 font-mono text-xs tracking-widest uppercase block mb-4">
           // OUR MANIFESTO
         </span>
-        <h2 className="text-4xl sm:text-6xl md:text-7xl font-black font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-neutral-200 to-neutral-500 leading-tight">
+        <h2 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-neutral-200 to-neutral-500 leading-tight">
           GRAVITY IS A VARIABLE. PROPULSION IS CONSTANT.
         </h2>
-        <p className="mt-8 max-w-2xl mx-auto text-neutral-400 font-mono text-sm sm:text-base leading-relaxed">
+        <p className="mt-4 sm:mt-8 max-w-2xl mx-auto text-neutral-400 font-mono text-xs sm:text-base leading-relaxed">
           We dismantled traditional foam vulcanization to engineer a kinetic energy system that returns what human biomechanics put in. Every gram stripped, every watt returned.
         </p>
       </section>
 
       {/* 2. CRAFT STORIES */}
-      <section id="craft" className="py-16 px-6 max-w-6xl mx-auto border-t border-neutral-900">
-        <div className="text-center mb-16 brand-reveal">
+      <section id="craft" className="py-12 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto border-t border-neutral-900">
+        <div className="text-center mb-8 sm:mb-16 brand-reveal">
           <span className="text-cyan-400 font-mono text-xs tracking-widest uppercase block mb-2">
             // AEROSPACE CRAFT
           </span>
-          <h3 className="text-3xl sm:text-4xl font-black font-mono uppercase text-white">
+          <h3 className="text-xl sm:text-3xl md:text-4xl font-black font-mono uppercase text-white">
             MATERIALS FROM THE STRATOSPHERE
           </h3>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-12 sm:space-y-20">
           {/* Craft Split 1: Wind Tunnel Flow Video */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center brand-reveal">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 items-center brand-reveal">
             <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900 group shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
               <video
                 ref={windVideoRef}
@@ -119,7 +119,7 @@ export default function BrandHomepage() {
           </div>
 
           {/* Craft Split 2: Carbon Telemetry */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center brand-reveal lg:flex-row-reverse">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 items-center brand-reveal lg:flex-row-reverse">
             <div className="space-y-4 order-2 lg:order-1">
               <span className="font-mono text-xs text-cyan-400 font-bold uppercase">
                 02. FORGED CARBON LAB
@@ -157,17 +157,17 @@ export default function BrandHomepage() {
       </section>
 
       {/* 3. COLORWAY & DESIGN CONFIGURATOR */}
-      <section className="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900 brand-reveal">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 max-w-5xl mx-auto border-t border-neutral-900 brand-reveal">
         <div className="text-center mb-10">
           <span className="text-lime-400 font-mono text-xs tracking-widest uppercase block mb-2">
             // COLORWAY LAB
           </span>
-          <h3 className="text-3xl font-black font-mono uppercase text-white">
+          <h3 className="text-xl sm:text-3xl font-black font-mono uppercase text-white">
             CUSTOM FINISHES & TELEMETRY
           </h3>
         </div>
 
-        <div className="p-8 rounded-3xl bg-neutral-900/50 border border-neutral-800 flex flex-col items-center gap-8 shadow-2xl">
+        <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-neutral-900/50 border border-neutral-800 flex flex-col items-center gap-6 sm:gap-8 shadow-2xl">
           <div
             className="relative w-full max-w-md aspect-[16/9] flex items-center justify-center transition-all duration-500"
             style={{
@@ -197,7 +197,7 @@ export default function BrandHomepage() {
                 <button
                   key={c.id}
                   onClick={() => setActiveColor(c.id)}
-                  className={`px-4 py-2 rounded-full font-mono text-xs flex items-center gap-2 border transition-all ${
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-mono text-[10px] sm:text-xs flex items-center gap-1.5 sm:gap-2 border transition-all ${
                     activeColor === c.id
                       ? `${c.border} bg-neutral-800 text-white shadow-lg`
                       : "border-neutral-800 bg-neutral-900/60 text-neutral-400 hover:text-white"
@@ -221,28 +221,28 @@ export default function BrandHomepage() {
       </section>
 
       {/* 4. NUMBERS STRIP */}
-      <section className="py-16 px-6 bg-neutral-900/40 border-y border-neutral-800/80 brand-reveal">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center font-mono">
+      <section className="py-10 sm:py-16 px-4 sm:px-6 bg-neutral-900/40 border-y border-neutral-800/80 brand-reveal">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center font-mono">
           <div>
-            <div className="text-4xl sm:text-6xl font-black text-lime-400">168g</div>
+            <div className="text-2xl sm:text-4xl md:text-6xl font-black text-lime-400">168g</div>
             <div className="text-xs text-neutral-400 mt-1 uppercase tracking-wider">
               Total Shoe Mass
             </div>
           </div>
           <div>
-            <div className="text-4xl sm:text-6xl font-black text-white">+4.8%</div>
+            <div className="text-2xl sm:text-4xl md:text-6xl font-black text-white">+4.8%</div>
             <div className="text-xs text-neutral-400 mt-1 uppercase tracking-wider">
               Running Economy
             </div>
           </div>
           <div>
-            <div className="text-4xl sm:text-6xl font-black text-cyan-400">38mm</div>
+            <div className="text-2xl sm:text-4xl md:text-6xl font-black text-cyan-400">38mm</div>
             <div className="text-xs text-neutral-400 mt-1 uppercase tracking-wider">
               Max World Stack
             </div>
           </div>
           <div>
-            <div className="text-4xl sm:text-6xl font-black text-lime-400">1,200</div>
+            <div className="text-2xl sm:text-4xl md:text-6xl font-black text-lime-400">1,200</div>
             <div className="text-xs text-neutral-400 mt-1 uppercase tracking-wider">
               Kilometer Lifespan
             </div>
@@ -251,18 +251,18 @@ export default function BrandHomepage() {
       </section>
 
       {/* 5. ATHLETE VOICES */}
-      <section className="py-20 px-6 max-w-5xl mx-auto brand-reveal">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 max-w-5xl mx-auto brand-reveal">
         <div className="text-center mb-12">
           <span className="text-neutral-500 font-mono text-xs tracking-widest uppercase block mb-2">
             // ATHLETE TESTED
           </span>
-          <h3 className="text-3xl font-black font-mono uppercase text-white">
+          <h3 className="text-xl sm:text-3xl font-black font-mono uppercase text-white">
             FIELD TRIAL REPORTS
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 font-mono space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-neutral-900/50 border border-neutral-800 font-mono space-y-3 sm:space-y-4">
             <Quote className="w-6 h-6 text-lime-400" />
             <p className="text-sm text-neutral-300 leading-relaxed">
               "At kilometer 35 when your legs usually turn into lead, the toe-spring fulcrum takes over. It feels less like running and more like controlled low-altitude flight."
@@ -272,7 +272,7 @@ export default function BrandHomepage() {
             </div>
           </div>
 
-          <div className="p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 font-mono space-y-4">
+          <div className="p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-neutral-900/50 border border-neutral-800 font-mono space-y-3 sm:space-y-4">
             <Quote className="w-6 h-6 text-cyan-400" />
             <p className="text-sm text-neutral-300 leading-relaxed">
               "The dampening from the nitrogen PEBA pods absorbs the harsh asphalt pounding without any of the squishy energy sink you find in typical supershoes."
@@ -285,8 +285,8 @@ export default function BrandHomepage() {
       </section>
 
       {/* 6. PRE-ORDER / RESERVATION CTA */}
-      <section id="order" className="py-20 px-6 max-w-4xl mx-auto text-center brand-reveal">
-        <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-b from-neutral-900 to-black border border-lime-400/40 relative overflow-hidden shadow-[0_0_80px_rgba(163,230,53,0.15)]">
+      <section id="order" className="py-14 sm:py-20 px-4 sm:px-6 max-w-4xl mx-auto text-center brand-reveal">
+        <div className="p-6 sm:p-14 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-neutral-900 to-black border border-lime-400/40 relative overflow-hidden shadow-[0_0_80px_rgba(163,230,53,0.15)]">
           <div className="absolute top-0 right-0 w-64 h-64 bg-lime-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -294,7 +294,7 @@ export default function BrandHomepage() {
             BATCH 01 · 999 PAIRS WORLDWIDE
           </span>
 
-          <h3 className="text-4xl sm:text-5xl font-black font-mono tracking-tight text-white uppercase">
+          <h3 className="text-2xl sm:text-4xl md:text-5xl font-black font-mono tracking-tight text-white uppercase">
             SECURE YOUR PAIR
           </h3>
           <p className="mt-4 max-w-lg mx-auto text-xs sm:text-sm text-neutral-400 font-mono">
@@ -323,8 +323,8 @@ export default function BrandHomepage() {
       </section>
 
       {/* 7. FUTURISTIC FOOTER */}
-      <footer className="py-16 px-6 border-t border-neutral-900 font-mono text-xs text-neutral-500">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      <footer className="py-10 sm:py-16 px-4 sm:px-6 border-t border-neutral-900 font-mono text-xs text-neutral-500">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
           <div>
             <div className="flex items-center gap-2 text-white font-bold tracking-widest text-sm mb-3">
               <Zap className="w-4 h-4 text-lime-400 fill-lime-400" />

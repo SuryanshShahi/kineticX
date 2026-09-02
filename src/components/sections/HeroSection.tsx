@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowDown, Flame, Shield, Activity, Compass, Cpu, Zap } from "lucide-react";
+import { ArrowDown, Flame, Shield, Activity, Compass } from "lucide-react";
 import { useFrameSequence } from "@/hooks/useFrameSequence";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -23,7 +23,6 @@ export default function HeroSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Intro timeline
       const introTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
       introTl.from(".hero-badge", {
@@ -53,7 +52,6 @@ export default function HeroSection() {
         duration: 0.8,
       }, "-=0.6");
 
-      // ScrollTrigger scrub
       const frameObj = { progress: 0 };
       const scrubTl = gsap.timeline({
         scrollTrigger: {
@@ -92,28 +90,28 @@ export default function HeroSection() {
   return (
     <section
       ref={rootRef}
-      className="relative w-full h-screen flex flex-col justify-between items-center pt-24 pb-8 px-6 sm:px-12 overflow-hidden bg-[#040406] cyber-grid text-white"
+      className="relative w-full h-screen flex flex-col justify-between items-center pt-20 sm:pt-24 pb-6 sm:pb-8 px-4 sm:px-12 overflow-hidden bg-[#040406] cyber-grid text-white"
     >
-      {/* Expansive Ambient Radial Glow Aura */}
+      {/* Ambient Glow */}
       <div className="absolute inset-0 ambient-glow-mesh pointer-events-none" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[700px] bg-lime-500/10 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[500px] bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[1000px] h-[400px] sm:h-[700px] bg-lime-500/10 rounded-full blur-[120px] sm:blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[400px] sm:w-[600px] h-[300px] sm:h-[500px] bg-cyan-500/10 rounded-full blur-[100px] sm:blur-[160px] pointer-events-none" />
 
       {/* Top telemetry badge */}
-      <div className="hero-badge flex items-center gap-3 px-5 py-2 rounded-full border border-neutral-800 bg-neutral-900/70 backdrop-blur-xl text-xs font-mono text-neutral-300 z-10 shadow-2xl">
-        <span className="w-2.5 h-2.5 rounded-full bg-lime-400 animate-ping" />
-        <span className="text-lime-400 font-bold">FRAME-SCRUB TURNTABLE</span>
-        <span className="text-neutral-600">|</span>
-        <span className="text-neutral-400">360° SPATIAL ROTATION ENGINE</span>
+      <div className="hero-badge flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-neutral-800 bg-neutral-900/70 backdrop-blur-xl text-[10px] sm:text-xs font-mono text-neutral-300 z-10 shadow-2xl">
+        <span className="w-2 h-2 rounded-full bg-lime-400 animate-ping" />
+        <span className="text-lime-400 font-bold">FRAME-SCRUB</span>
+        <span className="text-neutral-600 hidden sm:inline">|</span>
+        <span className="text-neutral-400 hidden sm:inline">360° SPATIAL ROTATION</span>
       </div>
 
-      {/* Main Full-Width Visual Stage */}
+      {/* Main Visual Stage */}
       <div className="relative w-full max-w-7xl flex-1 flex flex-col items-center justify-center my-auto z-10">
-        {/* Giant Background Title */}
-        <div className="w-full text-center overflow-hidden mb-2">
+        {/* Title */}
+        <div className="w-full text-center overflow-hidden mb-1 sm:mb-2">
           <h1
             ref={headlineRef}
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase font-mono text-transparent bg-clip-text bg-gradient-to-b from-white via-neutral-200 to-neutral-700"
+            className="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter uppercase font-mono text-transparent bg-clip-text bg-gradient-to-b from-white via-neutral-200 to-neutral-700"
           >
             {headline.split("").map((char, i) => (
               <span key={i} className="hero-char inline-block">
@@ -123,16 +121,14 @@ export default function HeroSection() {
           </h1>
         </div>
 
-        {/* Center Canvas Stage filling the viewport */}
+        {/* Canvas Stage */}
         <div
           id="hero-canvas-wrap"
-          className="relative w-full h-[52vh] sm:h-[58vh] max-h-[680px] flex items-center justify-center will-change-transform"
+          className="relative w-full h-[40vh] sm:h-[52vh] md:h-[58vh] max-h-[680px] flex items-center justify-center will-change-transform"
         >
-          {/* Floor Ring & Reflection Aura */}
-          <div className="absolute bottom-2 w-[70%] h-24 bg-gradient-to-t from-lime-500/25 to-transparent rounded-full blur-3xl transform scale-y-50 pointer-events-none" />
-          <div className="absolute bottom-6 w-[85%] h-36 rounded-full border border-lime-400/20 bg-lime-500/5 transform rotate-x-65 pointer-events-none shadow-[0_0_50px_rgba(163,230,53,0.15)]" />
+          {/* Floor glow */}
+          <div className="absolute bottom-2 w-[70%] h-16 sm:h-24 bg-gradient-to-t from-lime-500/25 to-transparent rounded-full blur-3xl transform scale-y-50 pointer-events-none" />
 
-          {/* Canvas without clipping borders */}
           <canvas
             ref={canvasRef}
             className="w-full h-full object-contain img-blend drop-shadow-[0_25px_60px_rgba(163,230,53,0.35)] select-none"
@@ -145,66 +141,58 @@ export default function HeroSection() {
             />
           )}
 
-          {/* HUD Telemetry Badges Floating in Viewport Space */}
+          {/* Telemetry Badges */}
           <div
             ref={telemetryRef}
-            className="absolute inset-0 pointer-events-none flex flex-col justify-between p-2 sm:p-4 z-20"
+            className="absolute inset-0 pointer-events-none flex flex-col justify-between p-1 sm:p-4 z-20"
           >
-            {/* Top Left Spec */}
-            <div className="flex items-center gap-3 self-start bg-neutral-950/80 backdrop-blur-xl border border-lime-400/40 px-4 py-2 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-              <div className="w-8 h-8 rounded-lg bg-lime-400/10 border border-lime-400/30 flex items-center justify-center text-lime-400">
-                <Activity className="w-4 h-4" />
-              </div>
+            {/* Top Left */}
+            <div className="flex items-center gap-2 sm:gap-3 self-start bg-neutral-950/80 backdrop-blur-xl border border-lime-400/40 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl shadow-lg">
+              <Activity className="w-3 h-3 sm:w-4 sm:h-4 text-lime-400 flex-shrink-0" />
               <div className="text-left font-mono">
-                <div className="text-[10px] text-neutral-400">ENERGY RETURN</div>
-                <div className="text-sm font-bold text-lime-400">+98.4% PER STRIDE</div>
+                <div className="text-[8px] sm:text-[10px] text-neutral-400">ENERGY RETURN</div>
+                <div className="text-[10px] sm:text-sm font-bold text-lime-400">+98.4%</div>
               </div>
             </div>
 
-            {/* Top Right Spec */}
-            <div className="flex items-center gap-3 self-end bg-neutral-950/80 backdrop-blur-xl border border-cyan-400/40 px-4 py-2 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+            {/* Top Right */}
+            <div className="flex items-center gap-2 sm:gap-3 self-end bg-neutral-950/80 backdrop-blur-xl border border-cyan-400/40 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl shadow-lg">
               <div className="text-right font-mono">
-                <div className="text-[10px] text-neutral-400">CHASSIS MASS</div>
-                <div className="text-sm font-bold text-cyan-400">168 GRAMS (ULTRALIGHT)</div>
+                <div className="text-[8px] sm:text-[10px] text-neutral-400">CHASSIS MASS</div>
+                <div className="text-[10px] sm:text-sm font-bold text-cyan-400">168G</div>
               </div>
-              <div className="w-8 h-8 rounded-lg bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400">
-                <Shield className="w-4 h-4" />
-              </div>
+              <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400 flex-shrink-0" />
             </div>
 
-            {/* Bottom Left Spec */}
-            <div className="flex items-center gap-3 self-start bg-neutral-950/80 backdrop-blur-xl border border-neutral-800 px-4 py-2 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-              <div className="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-700 flex items-center justify-center text-lime-400">
-                <Flame className="w-4 h-4" />
-              </div>
+            {/* Bottom Left */}
+            <div className="flex items-center gap-2 sm:gap-3 self-start bg-neutral-950/80 backdrop-blur-xl border border-neutral-800 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl shadow-lg">
+              <Flame className="w-3 h-3 sm:w-4 sm:h-4 text-lime-400 flex-shrink-0" />
               <div className="text-left font-mono">
-                <div className="text-[10px] text-neutral-400">PROPULSION PLATE</div>
-                <div className="text-sm font-bold text-white">FORGED CARBON 3K</div>
+                <div className="text-[8px] sm:text-[10px] text-neutral-400">PLATE</div>
+                <div className="text-[10px] sm:text-sm font-bold text-white">CARBON 3K</div>
               </div>
             </div>
 
-            {/* Bottom Right Spec */}
-            <div className="flex items-center gap-3 self-end bg-neutral-950/80 backdrop-blur-xl border border-neutral-800 px-4 py-2 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+            {/* Bottom Right */}
+            <div className="flex items-center gap-2 sm:gap-3 self-end bg-neutral-950/80 backdrop-blur-xl border border-neutral-800 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl shadow-lg">
               <div className="text-right font-mono">
-                <div className="text-[10px] text-neutral-400">GEOMETRY</div>
-                <div className="text-sm font-bold text-white">38MM STACK / 6MM DROP</div>
+                <div className="text-[8px] sm:text-[10px] text-neutral-400">STACK</div>
+                <div className="text-[10px] sm:text-sm font-bold text-white">38MM / 6MM</div>
               </div>
-              <div className="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-700 flex items-center justify-center text-cyan-400">
-                <Compass className="w-4 h-4" />
-              </div>
+              <Compass className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400 flex-shrink-0" />
             </div>
           </div>
         </div>
 
-        <p className="max-w-2xl mx-auto text-center text-xs sm:text-sm text-neutral-400 font-mono tracking-wide mt-2">
-          Scroll down to rotate the chassis 360° and begin mechanical layer separation.
+        <p className="max-w-2xl mx-auto text-center text-[10px] sm:text-sm text-neutral-400 font-mono tracking-wide mt-1 sm:mt-2">
+          Scroll down to rotate the chassis 360° and begin layer separation.
         </p>
       </div>
 
-      {/* Bottom scroll tracker */}
-      <div className="flex flex-col items-center gap-1.5 text-neutral-500 font-mono text-[10px] tracking-widest animate-bounce z-10">
+      {/* Scroll indicator */}
+      <div className="flex flex-col items-center gap-1 text-neutral-500 font-mono text-[9px] sm:text-[10px] tracking-widest animate-bounce z-10">
         <span>SCROLL TO DECONSTRUCT</span>
-        <ArrowDown className="w-3.5 h-3.5 text-lime-400" />
+        <ArrowDown className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-lime-400" />
       </div>
     </section>
   );
