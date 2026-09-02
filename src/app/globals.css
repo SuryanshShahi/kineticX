@@ -8,11 +8,19 @@
     --neon-lime: #84cc16;
   }
 
-  html, body {
+  html {
+    background-color: #040406;
+    color: #f3f4f6;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
     background-color: #040406;
     color: #f3f4f6;
     overflow-x: hidden;
-    overscroll-behavior-y: none;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
     selection-background-color: #a3e635;
     selection-color: #040406;
   }

@@ -88,8 +88,8 @@ export default function EnergyPulseSection() {
       {/* Canvas Stage */}
       <div className="relative w-full max-w-6xl h-[38vh] sm:h-[52vh] md:h-[58vh] max-h-[640px] flex items-center justify-center my-auto z-10">
         <div id="sole-img-container" className="relative w-full h-full flex items-center justify-center will-change-transform overflow-visible">
-          <canvas ref={canvasRef} className="w-full h-full object-contain img-blend-soft drop-shadow-[0_25px_60px_rgba(6,182,212,0.4)] select-none" />
-          {!ready && <img src="/img/pulse.jpg" alt="Loading" className="absolute inset-0 w-full h-full object-contain img-blend-soft" />}
+          <canvas ref={canvasRef} className="w-full h-full object-contain img-blend-soft drop-shadow-[0_25px_60px_rgba(6,182,212,0.4)] select-none pointer-events-none" />
+          {!ready && <img src="/img/pulse.jpg" alt="Loading" className="absolute inset-0 w-full h-full object-contain img-blend-soft pointer-events-none select-none" />}
 
           {/* SVG Laser */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 1000 600" fill="none">

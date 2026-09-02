@@ -131,13 +131,13 @@ export default function HeroSection() {
 
           <canvas
             ref={canvasRef}
-            className="w-full h-full object-contain img-blend drop-shadow-[0_25px_60px_rgba(163,230,53,0.35)] select-none"
+            className="w-full h-full object-contain img-blend drop-shadow-[0_25px_60px_rgba(163,230,53,0.35)] select-none pointer-events-none"
           />
           {!ready && (
             <img
               src="/img/hero.jpg"
               alt="Loading sneaker frame"
-              className="absolute inset-0 w-full h-full object-contain img-blend"
+              className="absolute inset-0 w-full h-full object-contain img-blend pointer-events-none select-none"
             />
           )}
 

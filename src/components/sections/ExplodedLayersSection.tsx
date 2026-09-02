@@ -131,8 +131,8 @@ export default function ExplodedLayersSection() {
       <div className="relative w-full max-w-6xl h-[40vh] sm:h-[52vh] md:h-[58vh] max-h-[640px] flex items-center justify-center my-auto z-10">
         {viewMode === "frame_scrub" ? (
           <div className="relative w-full h-full flex items-center justify-center">
-            <canvas ref={canvasRef} className="w-full h-full object-contain img-blend drop-shadow-[0_25px_60px_rgba(6,182,212,0.35)] select-none" />
-            {!ready && <img src="/img/exploded.jpg" alt="Loading" className="absolute inset-0 w-full h-full object-contain img-blend" />}
+            <canvas ref={canvasRef} className="w-full h-full object-contain img-blend drop-shadow-[0_25px_60px_rgba(6,182,212,0.35)] select-none pointer-events-none" />
+            {!ready && <img src="/img/exploded.jpg" alt="Loading" className="absolute inset-0 w-full h-full object-contain img-blend pointer-events-none select-none" />}
           </div>
         ) : (
           <div className="relative w-full max-w-4xl h-full flex flex-col items-center justify-center">
