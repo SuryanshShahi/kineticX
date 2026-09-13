@@ -303,7 +303,7 @@ export default function BrandHomepage() {
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button className="w-full sm:w-auto px-8 py-4 rounded-full bg-lime-400 text-neutral-950 font-mono font-black text-sm tracking-wider flex items-center justify-center gap-2 hover:bg-lime-300 transition-all shadow-[0_0_25px_rgba(163,230,53,0.5)]">
-              <span>PRE-ORDER · $295 USD</span>
+              <span>PRE-ORDER · ₹24,999</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button className="w-full sm:w-auto px-6 py-4 rounded-full border border-neutral-700 bg-neutral-900/60 font-mono text-xs text-neutral-300 hover:text-white hover:border-neutral-500 transition-all">
@@ -313,7 +313,7 @@ export default function BrandHomepage() {
 
           <div className="mt-8 flex items-center justify-center gap-6 text-[11px] font-mono text-neutral-500">
             <span className="flex items-center gap-1.5">
-              <Check className="w-3.5 h-3.5 text-lime-400" /> Free Global Express
+              <Check className="w-3.5 h-3.5 text-lime-400" /> Free Express Delivery (India)
             </span>
             <span className="flex items-center gap-1.5">
               <Check className="w-3.5 h-3.5 text-lime-400" /> 30-Day Track Trial
